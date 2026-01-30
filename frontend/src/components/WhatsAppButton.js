@@ -9,7 +9,7 @@ export const WhatsAppButton = () => {
     <button
       onClick={handleClick}
       data-testid="floating-whatsapp-btn"
-      className="fixed bottom-6 right-6 z-[9999] w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-2xl cursor-pointer group hover:scale-110 active:scale-95 transition-transform duration-200"
+      className="fixed bottom-24 right-6 z-[9999] w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-2xl cursor-pointer group hover:scale-110 active:scale-95 transition-transform duration-200"
       style={{ boxShadow: '0 4px 20px rgba(37, 211, 102, 0.5)' }}
       aria-label="Order on WhatsApp"
     >
