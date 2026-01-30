@@ -1,0 +1,138 @@
+{
+  "identity": {
+    "name": "Crepe Planet",
+    "persona": "E1: The Anti-AI Designer",
+    "tone": "Luxurious, Premium, Appetizing, Elegant, Friendly",
+    "audience": "Young adults, dessert lovers, Instagram users, Lebanese market"
+  },
+  "typography": {
+    "primary_font": "Playfair Display",
+    "secondary_font": "DM Sans",
+    "arabic_primary_font": "Amiri",
+    "arabic_secondary_font": "Tajawal",
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700,
+      "black": 900
+    },
+    "usage": {
+      "headings": "font-serif tracking-tight",
+      "body": "font-sans tracking-normal",
+      "arabic_headings": "font-arabic-serif",
+      "arabic_body": "font-arabic-sans"
+    }
+  },
+  "colors": {
+    "primary": "#1A3C34",
+    "secondary": "#6B705C",
+    "accent": "#D4AF37",
+    "background": "#F9F7F2",
+    "surface": "#FFFFFF",
+    "text_primary": "#0F2822",
+    "text_secondary": "#4A5D56",
+    "border": "#E5E7EB",
+    "success": "#10B981",
+    "error": "#EF4444"
+  },
+  "visual_enhancers": {
+    "gradients": {
+      "hero_overlay": "linear-gradient(to bottom, rgba(26, 60, 52, 0.8), rgba(26, 60, 52, 0.4))",
+      "gold_shimmer": "linear-gradient(45deg, #D4AF37, #F3E5AB, #D4AF37)"
+    },
+    "shadows": {
+      "card": "0 10px 30px -10px rgba(26, 60, 52, 0.1)",
+      "floating": "0 20px 40px -10px rgba(26, 60, 52, 0.2)"
+    },
+    "borders": {
+      "gold_trim": "1px solid #D4AF37",
+      "subtle": "1px solid rgba(26, 60, 52, 0.1)"
+    },
+    "textures": "Subtle grain overlay on solid backgrounds to avoid 'flat' digital look."
+  },
+  "layout_strategies": {
+    "hero_section": {
+      "type": "Parallax",
+      "description": "Full-screen hero with deep green overlay, gold typography, and a floating WhatsApp CTA.",
+      "alignment": "Center-aligned text for grandeur, but asymmetrical image placement."
+    },
+    "menu_grid": {
+      "type": "Bento Grid",
+      "description": "Asymmetrical grid for menu categories. 'Signature Plate' takes 2x2 span, others 1x1.",
+      "gap": "gap-6 md:gap-8"
+    },
+    "about_section": {
+      "type": "Split Screen",
+      "description": "Text on one side, overlapping images on the other with gold borders.",
+      "alignment": "Sticky text on scroll."
+    }
+  },
+  "components": {
+    "WhatsAppButton": {
+      "position": "fixed bottom-8 right-8",
+      "style": "Circular, Gold background, Green icon, Pulse animation.",
+      "link": "https://wa.me/96176779566"
+    },
+    "LanguageToggle": {
+      "position": "fixed top-8 right-8 z-50",
+      "style": "Minimalist text toggle (EN | AR), Gold active state."
+    },
+    "MenuCard": {
+      "style": "Clean white card, large image, gold price tag (L.L), subtle hover lift.",
+      "interaction": "Hover reveals 'Order on WhatsApp' button."
+    },
+    "Guestbook": {
+      "style": "Masonry layout of 'Love Notes'. Handwritten font style for comments.",
+      "background": "Soft pattern or texture."
+    }
+  },
+  "image_urls": {
+    "hero_bg": "https://images.unsplash.com/photo-1625653504276-c7bdfbc206eb?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "about_interior": "https://images.pexels.com/photos/6844476/pexels-photo-6844476.jpeg",
+    "menu_crepes": "https://images.unsplash.com/photo-1503624280608-6b79dc9ab03d?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "menu_pancakes": "https://images.unsplash.com/photo-1652282564241-c3a728e83d0b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "menu_signature": "https://images.unsplash.com/photo-1548184934-0e21703c9a12?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "cafe_ambiance": "https://images.unsplash.com/photo-1723130033796-e0a59fd7c711?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "motion": {
+    "entrance": "Staggered fade-up for grid items.",
+    "hover": "Scale up 1.02, shadow deepen.",
+    "scroll": "Parallax effect on background images.",
+    "loading": "Gold circular progress with logo."
+  },
+  "accessibility": {
+    "contrast": "Ensure Gold text is only used on Deep Green or Dark backgrounds. Use Dark Green for text on White.",
+    "rtl_support": "Full RTL layout mirroring for Arabic version."
+  },
+  "instructions_to_main_agent": [
+    "Implement a 'LanguageContext' to handle EN/AR switching and RTL direction.",
+    "Use 'lucide-react' for icons (Instagram, Phone, MapPin).",
+    "Ensure the 'WhatsApp' button is visible on all pages.",
+    "Use 'framer-motion' for the entrance animations and parallax.",
+    "The 'Guestbook' should be a static list for now, but styled as if it's dynamic.",
+    "Prices must be in L.L (Lebanese Lira) and formatted nicely (e.g., 1,500,000 L.L).",
+    "Do NOT use standard 'card' components from Shadcn without heavy customization (remove borders, add shadows).",
+    "For the 'Love/Comment' section, create a 'Masonry' layout using CSS columns."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts"
+  ]
+}
