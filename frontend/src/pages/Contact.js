@@ -25,6 +25,15 @@ const Contact = () => {
       color: 'bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400',
     },
     {
+      icon: MapPin,
+      titleEn: 'Location',
+      titleAr: 'الموقع',
+      valueEn: 'Bakhaoun, Sharfa, Public Road of Sir El Dinneyeh',
+      valueAr: 'بخعون، الشرفة، الطريق العام لسير الضنية',
+      link: null,
+      color: 'bg-red-500',
+    },
+    {
       icon: Clock,
       titleEn: 'Opening Hours',
       titleAr: 'ساعات العمل',
