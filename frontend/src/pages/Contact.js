@@ -78,7 +78,7 @@ const Contact = () => {
       {/* Contact Cards */}
       <section className="py-16 bg-background" data-testid="contact-cards">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
