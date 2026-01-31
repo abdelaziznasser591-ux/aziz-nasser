@@ -1,34 +1,177 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* LAKI Luxury Bag Store - App Styles */
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Smooth transitions for interactive elements */
+button, a, input {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
+/* Image loading optimization */
+img {
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Product image container */
+.product-image-container {
+    overflow: hidden;
+}
+
+.product-image {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cart sidebar overlay */
+.cart-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* RTL specific styles */
+[dir="rtl"] .cart-sidebar {
+    left: 0;
+    right: auto;
+}
+
+[dir="ltr"] .cart-sidebar {
+    right: 0;
+    left: auto;
+}
+
+/* Custom selection color */
+::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--foreground));
+}
+
+/* Focus styles */
+:focus-visible {
+    outline: 2px solid hsl(var(--gold));
+    outline-offset: 2px;
+}
+
+/* Prevent text selection on product cards */
+.product-card {
+    user-select: none;
+}
+
+/* Splash screen styles */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
 }
 
-.App-link {
-    color: #61dafb;
+/* Header blur effect */
+.header-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+/* WhatsApp button pulse */
+.whatsapp-pulse {
+    animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
     }
-    to {
-        transform: rotate(360deg);
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Badge shimmer effect */
+.badge-shimmer {
+    background: linear-gradient(
+        90deg,
+        hsl(var(--gold)) 0%,
+        hsl(43 80% 70%) 50%,
+        hsl(var(--gold)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmerBadge 2s infinite;
+}
+
+@keyframes shimmerBadge {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Gradient text for brand */
+.brand-gradient {
+    background: linear-gradient(135deg, hsl(var(--dark-brown)) 0%, hsl(0 20% 35%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Footer link hover */
+.footer-link {
+    position: relative;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: hsl(var(--gold));
+    transition: width 0.3s ease;
+}
+
+[dir="rtl"] .footer-link::after {
+    left: auto;
+    right: 0;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+    background: linear-gradient(
+        to bottom,
+        hsl(var(--cream)) 0%,
+        hsl(var(--primary) / 0.95) 100%
+    );
+}
+
+/* Loading skeleton */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        hsl(var(--muted)) 0%,
+        hsl(var(--muted) / 0.5) 50%,
+        hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeletonShimmer 1.5s infinite;
+}
+
+@keyframes skeletonShimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
     }
 }
